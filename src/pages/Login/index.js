@@ -25,7 +25,7 @@ const Login = () => {
     let handleShow = ()=>{
         setPasswordShow(!show);
     }
-
+    
     let handleSubmit = ()=>{
         if(!email){
             setEmailError('Email is required!')
@@ -77,7 +77,7 @@ const Login = () => {
                     }
                 </div>
                 <button type='submit' className='bg-primary text-white xl:!py-6 xl:!px-28 sml:py-3 sml:px-14 py-6 px-28 rounded-lg xl:!mt-12 sml:mt-8 mt-12' onClick={handleSubmit}>Login to Continue</button>
-                <p className='font-nunito text-lg sml:text-xs mt-9'>Already  have an account ? <Link to='/'><span className='font-nunito font-sm text-[#EA6C00]'>Sign up</span></Link> </p>
+                <p className='font-nunito text-lg sml:text-xs mt-9'>Already  have an account ? <Link to='/registration'><span className='font-nunito font-sm text-[#EA6C00]'>Sign up</span></Link> </p>
             </div>
         </div>
         <div className='md:w-1/2 xl:!w-1/2 hidden xl:block sml:block'>
