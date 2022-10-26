@@ -10,20 +10,20 @@ import UserBlockList from '../../components/UserBlockList'
 
 const Home = () => {
   return (
-    <div className='flex justify-around'>
-    <div className='max-w-[186px]'>
+    <div className='xl:flex justify-between p-2.5 xl:p-0'>
+    <div className='xl:max-w-[186px]'>
         <Slidebar active="home"/>
     </div>
-    <div className='w-[600px] m-10'>
+    <div className='xl:w-[600px] xl:m-10'>
     <SearchBox/>
     <GroupRequest/>
     <FriendRequest/>
     </div>
-    <div className='w-[600px] m-10'>
+    <div className='xl:w-[600px] xl:m-10'>
       <Friend/>
       <MyGroup/>
     </div>
-    <div className='w-[600px] m-10'>
+    <div className='xl:w-[600px] xl:m-10'>
     <UserList/>
     <UserBlockList/>
     </div>
