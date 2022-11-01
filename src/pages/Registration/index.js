@@ -5,9 +5,11 @@ import { AiOutlineEye } from 'react-icons/ai'
 import { getAuth, createUserWithEmailAndPassword , updateProfile , sendEmailVerification  } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { Triangle } from  'react-loader-spinner'
+import { getDatabase, ref, set } from "firebase/database";
  
 const Registration = () => {
     const auth = getAuth();
+    const db = getDatabase();
     let navigate = useNavigate('')
     let [email,setEmail] = useState('');
     let [emailerror,setEmailError] = useState('');
@@ -74,10 +76,18 @@ const Registration = () => {
                         setWaitLoad(false);
                         setRegistrationSuccess('Registration Successfully Complete, please varify your mail.');
                     });
+                  }).then(()=>{
+                        set(ref(db, 'users/' + user.user.uid), {
+                            username: user.user.displayName,
+                            email: user.user.email,
+                            profile_picture : user.user.photoURL
+                          });  
+                  }).then(()=>{
                     setTimeout(()=>{
                         navigate('/login');
                     },4000)
-                  }).catch((error) => {
+                  })
+                  .catch((error) => {
                     setUndefineError(error);
                   });
             })

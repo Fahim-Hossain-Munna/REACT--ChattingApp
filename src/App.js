@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Message from "./pages/Message";
 import Notification from "./pages/Notification";
 import Settings from "./pages/Settings";
+import ForgotPassword from "./pages/ForgotPassword";
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/message" element={<Message />} />
         <Route path="/notification" element={<Notification />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
       </Routes>
     </>
   );
